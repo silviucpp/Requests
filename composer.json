@@ -15,10 +15,18 @@
 	},
 	"require-dev": {
 		"requests/test-server": "dev-master",
-		"phpunit/phpunit": "<6.0"
+		"phpunit/phpunit": "^4.5 || ^5.0 || ^6.0 || ^7.0"
 	},
 	"type": "library",
 	"autoload": {
 		"psr-0": {"Requests": "library/"}
+	},
+	"scripts" : {
+		"test": [
+			"@php ./vendor/phpunit/phpunit/phpunit -c ./tests/phpunit.xml.dist --no-coverage"
+		],
+		"coverage": [
+			"@php ./vendor/phpunit/phpunit/phpunit -c ./tests/phpunit.xml.dist"
+		]
 	}
 }
